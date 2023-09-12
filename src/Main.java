@@ -6,6 +6,8 @@ import java.net.http.HttpResponse.BodyHandlers;
 
 public class Main {
     public static void main(String[] args) {
+        // TODO: add token parameter to client GET request, "t"
+
         final String format = "json";
         final String filter = "2";
         final String[] startDate = {"9", "6", "2023"}; // month, day, year
@@ -19,6 +21,8 @@ public class Main {
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
+            // .setHeader("t", "6caab79a-ee94-b5e2-3c2c-f7036aaf2990") DOESNT WORK
+            // .header("t", "6caab79a-ee94-b5e2-3c2c-f7036aaf2990") GRAHHH
             .uri(URI.create(url))
             .build();
 
